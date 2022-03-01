@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect } from "react";
+import { getCity } from "./actions/locationAction";
+import { useDispatch } from "react-redux";
+// import searchCity from "./apiGeolocation";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCity());
+  });
+
+  return <div className="App">app del clima</div>;
 }
 
 export default App;
